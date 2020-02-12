@@ -22,7 +22,7 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.holtwinters import SimpleExpSmoothing
 from sklearn.linear_model import LinearRegression
 
-def sThetaF(y, s_period , h = 10, level = np.array([90,95,99])):
+def sesThetaF(y, s_period , h = 10, level = np.array([90,95,99])):
 	"""
 	@param y : array-like time series data
 	@param s_period : the no. of observations before seasonal pattern repeats
@@ -37,13 +37,13 @@ def sThetaF(y, s_period , h = 10, level = np.array([90,95,99])):
 	fcast = {} # store result
 	# Check seasonality
 	x = y.copy()
-	n = len(x)
+	n = y.index.size
 	m = s_period 
 
 	if m > 1 and n > 2 * m:
 		r = (acf(x, nlags = m))[1:]
 		temp = np.delete(r, m-1)
-		stat = np.sqrt((1+ 2 * np.sum(temp ** 2)) / n)
+		stat = np.sqrt((1+ 2 * np.sum(np.square(temp))) / n)
 		seasonal = (abs(r[m-1])/stat) > norm.cdf(0.95)
 	else:
 		seasonal = False
