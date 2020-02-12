@@ -8,4 +8,4 @@
   * optimized_theta: optimized theta methods based on Fiorucci et al(2016) ( On progress )
   
 #### Note:
-  Currently working on implementing more generel theta method 
+  Currently working on implementing more generel theta methods (optimized theta method)
