@@ -1,4 +1,4 @@
-from standard_theta import sThetaF 
+from ses_theta import sesThetaF 
 import pandas as pd 
 import matplotlib.pyplot as plt 
 import seaborn as sns
