@@ -3,8 +3,8 @@
   Suprisingly, 
   
 #### Files:
-  s_theta.py: Implementation of SES with drift by Hyndman and Billah (2003). This is equivalent to standard method of Assimakopouslos and Nikopoulos (2000)
-  test.py: Simulate data to test methods and visualize 
+  * s_theta.py: Implementation of SES with drift by Hyndman and Billah (2003). This is equivalent to standard method of Assimakopouslos and Nikopoulos (2000)
+  * test.py: Simulate data to test methods and visualize 
   
 #### Note:
   Currently working on implementing more generel theta method 
